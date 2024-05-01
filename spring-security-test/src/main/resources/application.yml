@@ -6,7 +6,7 @@ spring:
     name: swcamp-user-service
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306//menudb
+    url: jdbc:mariadb://localhost:3306/menudb
     username: root
     password: swcamp
 
@@ -26,3 +26,7 @@ eureka:
       register-with-eureka: true
       service-url:
         defalutZone: http://localhost:8761/eureka
+
+
+swcamp:
+  message: Let's do msa!

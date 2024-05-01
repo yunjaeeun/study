@@ -13,11 +13,9 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: 1st-service
-          uri: http://localhost:12321/
+        - id: user-service
+          uri: lb://SWCAMP-USER-SERVICE
           predicates:
-            - Path=/first-service/**
-        - id: 2nd-service
-          uri: http://localhost:3123/
-          predicates:
-            - Path=/second-service/**
+            - Path=/user-service/**
+          filters:
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
